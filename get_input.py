@@ -9,9 +9,8 @@ if __name__ == '__main__' :
     parsed = []
     text = []
 
-    #doc = docx.Document("input.docx")
 
-    f = open("input2.txt", 'r')
+    f = open("input.txt", 'r')
 
 
     n = int(f.read(1))

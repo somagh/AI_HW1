@@ -1,10 +1,4 @@
-2
-
-http://ce.sharif.edu/~akowsary/bio.html
-
- I was born in 30 January 1997; Tehran, Iran.
-
-###
+1
 
 http://ce.sharif.edu/~akowsary/bio.html
 
