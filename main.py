@@ -2,6 +2,7 @@
 
 import urllib.request
 from bs4 import BeautifulSoup
+from searcher import search
 
 parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
 # print (parsed.body.find_all('li')[0].a.get('href'))
@@ -51,7 +52,7 @@ def parser_agent(parsed, texts, address="body"):
             new_address = "{} > {}:nth-of-type({})".format(address, key, i)
             point = 0
             for text in texts:
-                is_in_address = True # vez function (newAddress, function)
+                is_in_address = search(parsed[0], new_address, text)
                 if is_in_address:
                     point += 1
             if point > max_point:
