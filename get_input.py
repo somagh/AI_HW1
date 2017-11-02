@@ -11,7 +11,7 @@ if __name__ == '__main__' :
 
     #doc = docx.Document("input.docx")
 
-    f = open("input.txt", 'r')
+    f = open("input2.txt", 'r')
 
 
     n = int(f.read(1))
@@ -22,6 +22,7 @@ if __name__ == '__main__' :
         while (True):
             link = f.readline()
             if link[0] != '\n' :
+                print(link)
                 parsed.append(BeautifulSoup(urllib.request.urlopen(link).read(),"html.parser"))
                 break
 
@@ -42,7 +43,7 @@ if __name__ == '__main__' :
 
         text.append(str)
 
-        #print(i, " ", parsed[i].prettify()[0:200], "\n $ \n", text[i], "\n^")
+        print(i, " ", parsed[i].prettify()[0:200], "\n $ \n", text[i], "\n^")
 
 
 
