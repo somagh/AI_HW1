@@ -18,7 +18,7 @@ from searcher import search
 # print(parsed.select("ul > li"))
 # felan = { "soup": [],"text": [] }
 
-def parser_agent(parsed, texts, address="body"):
+def parser_agent(parsed, texts, address=""):
     parsed_first = parsed[0].select(address)[0]
     parsed_first_children = list(parsed_first.children)
     n = len(parsed_first_children)
@@ -37,7 +37,10 @@ def parser_agent(parsed, texts, address="body"):
     max_address = ""
     for key in parsed_per_name:
         for i in range(len(parsed_per_name[key])):
-            new_address = "{} > {}:nth-of-type({})".format(address, key, i + 1)
+            if len(address) == 0:
+                new_address = "{}:nth-of-type({})".format(key, i + 1)
+            else:
+                new_address = "{} > {}:nth-of-type({})".format(address, key, i + 1)
             point = 0
             for j in range(len(texts)):
                 is_in_address = search(parsed[j], new_address, texts[j])
