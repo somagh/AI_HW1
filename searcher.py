@@ -4,4 +4,5 @@ import urllib.request
 from bs4 import BeautifulSoup
 
 def search(address, text):
-    return False
+    s = address.get_text()
+    return s.contains(text)
