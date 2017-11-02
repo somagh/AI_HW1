@@ -37,7 +37,7 @@ def parser_agent(parsed, texts, address="body"):
     max_address = ""
     for key in parsed_per_name:
         for i in range(len(parsed_per_name[key])):
-            new_address = "{} > {}:nth-of-type({})".format(address, key, i)
+            new_address = "{} > {}:nth-of-type({})".format(address, key, i + 1)
             point = 0
             for j in range(len(texts)):
                 is_in_address = search(parsed[j], new_address, texts[j])
