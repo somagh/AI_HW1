@@ -4,7 +4,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 from searcher import search
 
-parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
+#parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
 # print (parsed.body.find_all('li')[0].a.get('href'))
 # print (parsed.prettify())
 # print(list(parsed.children))
@@ -18,21 +18,10 @@ parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").
 # print(parsed.select("ul > li"))
 # felan = { "soup": [],"text": [] }
 
-
-a = {}
-if("salam" in a):
-    print(a["salam"])
-else:
-    a["salam"] = 1
-print(a["salam"])
-
 def parser_agent(parsed, texts, address="body"):
     parsed_first = parsed[0].select(address)[0]
     parsed_first_children = list(parsed_first.children)
     n = len(parsed_first_children)
-    # print(parsed_first_children, n)
-    # for i in range(n):
-    #     print(type(parsed_first_children[i]), "hi")
     parsed_per_name = {}
 
     for i in range(n):
@@ -51,8 +40,8 @@ def parser_agent(parsed, texts, address="body"):
         for i in range(len(parsed_per_name[key])):
             new_address = "{} > {}:nth-of-type({})".format(address, key, i)
             point = 0
-            for text in texts:
-                is_in_address = search(parsed[0], new_address, text)
+            for j in range(len(texts)):
+                is_in_address = search(parsed[j], new_address, texts[j])
                 if is_in_address:
                     point += 1
             if point > max_point:
@@ -62,5 +51,3 @@ def parser_agent(parsed, texts, address="body"):
         print("answer is {}".format(address))
     else:
         parser_agent(parsed, texts, max_address)
-
-# parser_agent([parsed], ["salam"])
