@@ -9,7 +9,7 @@ if __name__ == '__main__' :
     parsed = []
     text = []
 
-    f = open("input.txt", 'r')
+    f = open("input.docx", 'r')
 
     n = int(f.read(1))
     f.readline()
