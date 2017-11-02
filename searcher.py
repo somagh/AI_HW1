@@ -3,6 +3,11 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
-def search(address, text):
-    s = address.get_text()
+def search(parsed, address, text):
+    s = ""
+    arr = parsed.select(address)
+
+    for i in range(len(arr)):
+        s += arr[i].get_text()
+
     return s.contains(text)
