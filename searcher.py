@@ -9,8 +9,8 @@ def search(parsed, address, text):
     # print(parsed.find_all('body')[0].select("div:nth-of-type(1)"))
     # print(parsed.select(address))
     arr = parsed.select(address)
-    print(arr)
+
     for i in range(len(arr)):
         s += arr[i].get_text()
-
-    return s.__contains__(text)
+    print(arr, s.find(text) >= 0, text, "inja search", s)
+    return s.find(text) >= 0

@@ -18,6 +18,7 @@ from searcher import search
 # print(parsed.select("ul > li"))
 # felan = { "soup": [],"text": [] }
 
+
 def parser_agent(parsed, texts, address="body"):
     parsed_first = parsed[0].select(address)[0]
     parsed_first_children = list(parsed_first.children)
@@ -46,10 +47,11 @@ def parser_agent(parsed, texts, address="body"):
                 is_in_address = search(parsed[j], new_address, texts[j])
                 if is_in_address:
                     point += 1
+            print("inja link", new_address, point, max_point)
             if point > max_point:
                 max_point = point
                 max_address = new_address
-    if max_point != texts:
+    if max_point != len(texts):
         print("answer is {}".format(address))
     else:
         parser_agent(parsed, texts, max_address)

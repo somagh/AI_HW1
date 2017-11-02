@@ -43,7 +43,7 @@ if __name__ == '__main__' :
 
         text.append(str)
 
-        print(i, " ", parsed[i].prettify()[0:200], "\n $ \n", text[i], "\n^")
+        print(i, " ", parsed[i].prettify(), "\n $$$$ \n", text[i], "\n^")
 
 
 
