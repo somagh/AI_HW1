@@ -13,4 +13,4 @@ def search(parsed, address, text):
     for i in range(len(arr)):
         s += arr[i].get_text()
 
-    return s.contains(text)
+    return s.__contains__(text)
