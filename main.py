@@ -4,7 +4,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 from searcher import search
 
-#parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
+# parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
 # print (parsed.body.find_all('li')[0].a.get('href'))
 # print (parsed.prettify())
 # print(list(parsed.children))
@@ -32,7 +32,6 @@ def parser_agent(parsed, texts, address="body"):
             parsed_per_name[child_name] += [parsed_first_children[i]]
         else:
             parsed_per_name[child_name] = [parsed_first_children[i]]
-        print(i, parsed_first_children[i], child_name, parsed_per_name)
 
     max_point = 0
     max_address = ""
