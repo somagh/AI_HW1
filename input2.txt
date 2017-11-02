@@ -1,5 +1,11 @@
-1
+2
 
-http://ce.sharif.edu/~akowsary
+http://ce.sharif.edu/~akowsary/bio.html
 
-This is Arya
+ I was born in 30 January 1997; Tehran, Iran.
+
+###
+
+http://ce.sharif.edu/~akowsary/bio.html
+
+ competed in INOI(Iran National Olympiads in Informatics) and in 2014 I was awarded silver medal.
