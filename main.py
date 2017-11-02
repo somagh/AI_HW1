@@ -18,7 +18,7 @@ from searcher import search
 # print(parsed.select("ul > li"))
 # felan = { "soup": [],"text": [] }
 
-def parser_agent(parsed, texts, address=""):
+def parser_agent(parsed, texts, address="body"):
     parsed_first = parsed[0].select(address)[0]
     parsed_first_children = list(parsed_first.children)
     n = len(parsed_first_children)
