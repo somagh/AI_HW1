@@ -8,8 +8,7 @@ from bs4 import BeautifulSoup
 parsed = []
 text = []
 
-
-f = open("input3.txt", 'r')
+f = open("input3.txt", 'r',encoding='utf-8')
 
 
 n = int(f.read(1))
