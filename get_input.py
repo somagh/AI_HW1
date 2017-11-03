@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 parsed = []
 text = []
 
-f = open("input3.txt", 'r',encoding='utf-8')
+f = open("input4.txt", 'r',encoding='utf-8')
 
 
 n = int(f.read(1))
@@ -39,7 +39,7 @@ for i in range(n):
 
     text.append(str)
 
-    print(i, " inja input ", link, "\n\n\n" ,parsed[i].prettify(), "\n $$$$ \n", text[i], "\n^")
+    print(i, " inja input ", link, "\n\n\n")
 
 
 parser_agent(parsed, text)
