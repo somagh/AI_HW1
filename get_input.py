@@ -10,7 +10,7 @@ if __name__ == '__main__' :
     text = []
 
 
-    f = open("input.txt", 'r')
+    f = open("input3.txt", 'r')
 
 
     n = int(f.read(1))

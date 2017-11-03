@@ -16,7 +16,7 @@ def search(parsed, address, text):
     ss = ""
     for i in range(len(s)):
         if(s[i] != '\n' and s[i] != ' ' and s[i] != '\t' and ord(s[i]) != 13):
-            #print("\n", i, " jk ", ss, " \n", s[i], "kfc", ord(s[i]), "\n\n")
+            print("\n", i, " jk ", ss, " \n", s[i], "kfc", ord(s[i]), "\n\n")
             ss += s[i]
 
     s = ss;
