@@ -1,9 +1,11 @@
 # in the name of god
-
+from bs4 import BeautifulSoup
 from searcher import search
+import urllib.request
 
-# parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
-# print (parsed.body.find_all('li')[0].a.get('href'))
+parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
+print(parsed.body.find_all('img'))
+print (parsed.body.find_all('img')[0].get('src'))
 # print (parsed.prettify())
 # print(list(parsed.children))
 # print([type(item) for item in list(parsed.children)] )
