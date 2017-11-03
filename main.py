@@ -1,14 +1,13 @@
 # in the name of god
 
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 from searcher import search
-# import urllib.request
+import urllib.request
 
 # parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
-# print(parsed.body.find_all('img'))
-# print (parsed.body.find_all('img')[0].get('id'))
-# if parsed.body.find_all('img')[0].get('id') is  None:
-#     print("salam amiireza")
+# print(parsed.body.find_all('a'))
+# print (parsed.body.find_all('a')[0].get('class'))
+
 # print (parsed.prettify())
 # print(list(parsed.children))
 # print([type(item) for item in list(parsed.children)] )
@@ -26,6 +25,14 @@ def parser_agent(parsed, texts, address="body"):
 
     if parsed_first.get('id') is not None:
         address = "#{}".format(parsed_first.get('id'))
+
+    parsed_first_classes = parsed_first.get('class')
+
+    if parsed_first_classes is not None:
+        for i in range(len(parsed_first_classes)):
+            if len(parsed[0].select(".{}".format(parsed_first_classes[i]))) == 1:
+                address = ".{}".format(parsed_first_classes[i])
+                break
 
     parsed_first_children = list(parsed_first.children)
     n = len(parsed_first_children)
