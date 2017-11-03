@@ -7,11 +7,13 @@ import json
 
 parsed = []
 text = []
-all_data = json.load(open('input3.json',encoding='utf-8'))
+all_data = json.load(open('mashregh_mainimage.json',encoding='utf-8'))
 
 for data in all_data:
-    parsed.append(BeautifulSoup(urllib.request.urlopen(data['link']).read(),"html.parser"))
+    print(data['link'], "inja link \n\n", data["text"], "\n\n")
+    parsed.append(BeautifulSoup(urllib.request.urlopen(data['link']).read(), "html.parser"))
     text.append(data['text'])
-    #print(parsed[-1].prettify(), "\n $$$$ \n", text[-1], "\n^")
+    # print(data['link'], "inja link \n\n", data["text"], "\n\n")
+    # print(parsed[-1].prettify(), "\n $$$$ \n", text[-1], "\n^")
 
 parser_agent(parsed, text)
