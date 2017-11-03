@@ -1,11 +1,14 @@
 # in the name of god
-from bs4 import BeautifulSoup
-from searcher import search
-import urllib.request
 
-parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
-print(parsed.body.find_all('img'))
-print (parsed.body.find_all('img')[0].get('src'))
+# from bs4 import BeautifulSoup
+from searcher import search
+# import urllib.request
+
+# parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
+# print(parsed.body.find_all('img'))
+# print (parsed.body.find_all('img')[0].get('id'))
+# if parsed.body.find_all('img')[0].get('id') is  None:
+#     print("salam amiireza")
 # print (parsed.prettify())
 # print(list(parsed.children))
 # print([type(item) for item in list(parsed.children)] )
@@ -20,6 +23,10 @@ print (parsed.body.find_all('img')[0].get('src'))
 
 def parser_agent(parsed, texts, address="body"):
     parsed_first = parsed[0].select(address)[0]
+
+    if parsed_first.get('id') is not None:
+        address = "#{}".format(parsed_first.get('id'))
+
     parsed_first_children = list(parsed_first.children)
     n = len(parsed_first_children)
     parsed_per_name = {}

@@ -21,7 +21,6 @@ def search(parsed, address, text):
         arri_images = arr[i].find_all('img')
         for j in range (len(arri_images)):
             src = arri_images[j].get('src')
-            # print(arri_images[j], "\n\n", address, "\n\n ",  src, "\ninja src\n\n")
             if src.find(text) >= 0:
                 return True
 
@@ -35,6 +34,6 @@ def search(parsed, address, text):
 
     s = ss
 
-    #print(address, "inja address \n\n\n", ss, "\n\n", text, "\n\n", s.find(text), "\n\n")
+    # print(address, "inja address \n\n\n", ss, "\n\n", text, "\n\n", s.find(text), "\n\n")
 
     return s.find(text) >= 0
