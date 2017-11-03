@@ -1,7 +1,5 @@
 # in the name of god
 
-import urllib.request
-from bs4 import BeautifulSoup
 from searcher import search
 
 # parsed = BeautifulSoup(urllib.request.urlopen("http://ce.sharif.edu/~akowsary").read(),"html.parser")
@@ -16,7 +14,6 @@ from searcher import search
 # print(parsed.prettify())
 # print(parsed.select("body > nav > div"))
 # print(parsed.select("ul > li"))
-# felan = { "soup": [],"text": [] }
 
 
 def parser_agent(parsed, texts, address="body"):
@@ -47,7 +44,6 @@ def parser_agent(parsed, texts, address="body"):
                 is_in_address = search(parsed[j], new_address, texts[j])
                 if is_in_address:
                     point += 1
-            print("inja link", new_address, point, max_point)
             if point > max_point:
                 max_point = point
                 max_address = new_address

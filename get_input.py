@@ -9,7 +9,7 @@ parsed = []
 text = []
 
 
-f = open("input2.txt", 'r')
+f = open("input3.txt", 'r')
 
 
 n = int(f.read(1))
@@ -17,32 +17,30 @@ f.readline()
 
 for i in range(n):
 
-    while (True):
+    while True:
         link = f.readline()
-        if link[0] != '\n' :
-            print(link)
+        if link[0] != '\n':
             parsed.append(BeautifulSoup(urllib.request.urlopen(link).read(),"html.parser"))
             break
 
-    while (True):
+    while True:
         str = f.readline()
-        if str[0] != '\n' :
+        if str[0] != '\n':
             break
 
-    while (True):
+    while True:
         str2 = f.readline()
-        if len(str2) and str2[0] != '#' :
+        if len(str2) and str2[0] != '#':
             str += str2
         else:
             break
 
-    while (str[len(str)-1] == '\n') :
+    while str[len(str)-1] == '\n':
         str = str[:-1]
 
     text.append(str)
 
-    print(i, " ", parsed[i].prettify(), "\n $$$$ \n", text[i], "\n^")
-
+    print(i, " inja input ", link, "\n\n\n" ,parsed[i].prettify(), "\n $$$$ \n", text[i], "\n^")
 
 
 parser_agent(parsed, text)
