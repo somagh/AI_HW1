@@ -3,46 +3,15 @@
 import urllib.request
 from main import parser_agent
 from bs4 import BeautifulSoup
-
+import json
 
 parsed = []
 text = []
+all_data = json.load(open('input3.json',encoding='utf-8'))
 
-f = open("input3.txt", 'r',encoding='utf-8')
-
-
-n = int(f.read(1))
-f.readline()
-
-for i in range(n):
-
-    while True:
-        link = f.readline()
-        if link[0] != '\n':
-            parsed.append(BeautifulSoup(urllib.request.urlopen(link).read(),"html.parser"))
-            break
-
-    while True:
-        str = f.readline()
-        if str[0] != '\n':
-            break
-
-    while True:
-        str2 = f.readline()
-        if len(str2) and str2[0] != '#':
-            str += str2
-        else:
-            break
-
-    while str[len(str)-1] == '\n':
-        str = str[:-1]
-
-    text.append(str)
-
-    print(i, " inja input ", link, "\n\n\n" ,parsed[i].prettify(), "\n $$$$ \n", text[i], "\n^")
-
+for data in all_data:
+    parsed.append(BeautifulSoup(urllib.request.urlopen(data['link']).read(),"html.parser"))
+    text.append(data['text'])
+    #print(parsed[-1].prettify(), "\n $$$$ \n", text[-1], "\n^")
 
 parser_agent(parsed, text)
-
-
-
