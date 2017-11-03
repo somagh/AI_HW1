@@ -22,7 +22,6 @@ def search(parsed, address, text):
             texts += text[i]
 
     text = texts
-
-    # print(arr, s.find(text) >= 0, text, "inja search", s, len(s), address," inja address ", " \n\n\n\n\n\n\n\n\n\n\ninja arvandi \n\n\n")
+    # print(address, "inja address \n\n\n", ss, "\n\n", text, "\n\n", s.find(text), "\n\n")
 
     return s.find(text) >= 0
