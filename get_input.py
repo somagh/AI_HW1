@@ -8,7 +8,7 @@ import ssl
 
 parsed = []
 text = []
-all_data = json.load(open('input.json',encoding='utf-8'))
+all_data = json.load(open('irna_lead.json',encoding='utf-8'))
 
 for data in all_data:
 
