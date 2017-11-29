@@ -15,12 +15,16 @@ def search(parsed, address, text):
     for i in range(len(arr)):
         if arr[i].name == 'img':
             src = arr[i].get('src')
+            if(src is None):
+                continue
             if src.find(text) >= 0:
                 return True
 
         arri_images = arr[i].find_all('img')
         for j in range (len(arri_images)):
             src = arri_images[j].get('src')
+            if (src is None):
+                continue
             if src.find(text) >= 0:
                 return True
 
